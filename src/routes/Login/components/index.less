@@ -1,0 +1,84 @@
+@import '../../../assets/styles/variables.less';
+
+.login-page {
+  background-color: @white;
+  .content {
+    background-image: url('/images/bg-4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 1;
+    padding: 0 7%;
+    @media (max-width: 992px) { flex: 100%; }
+
+    .ant-typography { color: @white; }
+
+    h1.ant-typography { font-size: 45px; }
+  }
+
+  .aside {
+    width: 600px;
+
+    @media (max-width: 992px) { width: 100%; }
+
+    .height-full {
+      flex-flow: column;
+      padding: 5%;
+
+      .ant-row-flex {
+        flex: 1;
+        flex-flow: column;
+      }
+    }
+
+    .login-form {
+      @media (min-width: 993px) { width: 470px; }
+      margin-bottom: 20px;
+
+      .user-img {
+        font-size: 28px;
+        margin-bottom: 26px;
+        text-align: center;
+
+        img {
+          margin-right: 18px;
+          width: 70px;
+        }
+
+        h4.ant-typography {
+          color: @gray;
+          margin: 10% 0;
+        }
+      }
+      .ant-form-item { margin-bottom: 0; }
+      .ant-btn {
+        height: 46px;
+        font-size: 13px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      .login-form-forgot {
+        float: right;
+        font-weight: 500;
+      }
+    }
+    .select {
+      width: 120px;
+      margin-bottom: 10px;
+
+      .ant-select { width: 100%; }
+    }
+    .new-user {
+      font-weight: 500;
+    }
+
+    a {
+      color: @gray;
+
+      &:hover { color: @primary-color; }
+
+      &:active { color: @primary-color; }
+    }
+  }
+
+  .ant-spin-nested-loading > div > .ant-spin { max-height: none; }
+}

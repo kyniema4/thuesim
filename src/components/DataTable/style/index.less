@@ -1,0 +1,100 @@
+@import '../../../assets/styles/variables.less';
+
+@datatable-prefix-cls: antui-datatable;
+
+// DataTable styles
+// -----------------------------
+.@{datatable-prefix-cls} {
+  .ant-table table { color: #595d6e; }
+  &.table-row-alternate-color {
+    table tbody {
+      background: #fff;
+      width: 100%;
+
+      tr:nth-child(odd) { background: #f6f6f6; }
+
+      tr:nth-child(even) { background: #fff; }
+
+      tr:hover { background: rgba(45, 183, 245, 0.2); }
+    }
+  }
+
+  .ant-table-small {
+    border: none;
+
+    .ant-table-tbody > tr > td {
+      height: 35px;
+      padding: 3px 8px;
+    }
+
+    .ant-table-thead > tr > th {
+      color: #666;
+      font-weight: 700;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .ant-table-footer { padding: 8px; }
+
+  .ant-table-tbody > tr.ant-table-row-selected td { background: #fffde7; }
+
+  .ant-table-tbody > tr {
+    &.disabled > td {
+      background-color: #f5f5f5;
+      color: rgba(0, 0, 0, 0.25);
+      cursor: not-allowed;
+    }
+  }
+
+  .table-row-button {
+    button,
+    a {
+      background-color: transparent;
+      color: tint(@primary-color, 40%);
+      height: 20px;
+      outline: none;
+      overflow: hidden;
+      padding: 0 5px !important; // Button is added when loading
+      vertical-align: middle;
+      border: none;
+
+      > i {
+        font-size: 20px;
+        margin-left: 0 !important; // button is added when loading
+        vertical-align: top;
+
+        &.anticon-spin + .anticon { display: none; }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        color: @primary-color;
+      }
+
+      &:active,
+      &.active { background-color: transparent; }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: transparent;
+          color: #ccc;
+        }
+      }
+    }
+  }
+
+  .ant-form-item {
+    left: -12px;
+    margin-bottom: 0;
+    position: relative;
+  }
+}

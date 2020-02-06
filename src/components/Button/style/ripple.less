@@ -1,0 +1,92 @@
+@import '../../../assets/styles/variables.less';
+@default-color: rgba(0, 0 ,0, 0.08);
+
+.ripple-btn {
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #000;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  min-height: 36px;
+  min-width: 64px;
+  overflow: hidden;
+  padding: 8px 16px;
+  position: relative;
+  transition: background-color 250ms;
+
+  > span {
+    position: relative;
+    user-select: none;
+    z-index: 1;
+  }
+
+  > .ripple-animate {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 50%;
+    pointer-events: none;
+    position: absolute;
+    transform: scale(0);
+    transition: transform 700ms, opacity 700ms;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 0;
+  }
+}
+
+.ripple-btn {
+  &:not(.ghost) {
+    background: #d5d5d5;
+    color: #000;
+
+    > .ripple-animate { background: rgba(0, 0, 0, 0.4); }
+
+    &.primary {
+      background: @primary-color;
+      color: #fff;
+
+      > .ripple-animate { background: rgba(255, 255, 255, 0.4); }
+    }
+
+    &.danger {
+      background: @error-color;
+      color: #fff;
+
+      > .ripple-animate { background: rgba(255, 255, 255, 0.4); }
+    }
+  }
+
+  &.ghost {
+    background: transparent;
+    color: #000;
+
+    > .ripple-animate { background: rgba(0, 0, 0, 0.4); }
+
+    &:hover,
+    &:active { background: rgba(0, 0, 0, 0.08); }
+
+    &.primary {
+      background: transparent;
+      color: @primary-color;
+
+      &:hover,
+      &:active { background: fadeOut(@primary-color, 80%); }
+
+      > .ripple-animate { background: fadeOut(@primary-color, 60%); }
+    }
+
+    &.danger {
+      background: transparent;
+      color: @error-color;
+
+      &:hover,
+      &:active { background: fadeOut(@error-color, 80%); }
+
+      > .ripple-animate { background: fadeOut(@error-color, 60%); }
+    }
+  }
+}

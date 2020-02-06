@@ -1,0 +1,195 @@
+// Font icon
+@font-face {
+  font-family: 'Icomoon';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/icomoon/icomoon.eot');
+  src: url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.woff') format('woff'),
+    url('../fonts/icomoon/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+}
+
+.ad {
+  display: inline-block;
+  font: normal normal normal 16px/1 Icomoon;
+  font-size: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  text-rendering: auto;
+  transform: translate(0, 0);
+}
+
+.ad-lines::before {
+  content: '\e600'; // Three bars
+}
+
+.ad-wand::before {
+  content: '\e010'; // Wand
+}
+
+.ad-radio-tower::before {
+  content: '\f030'; // Signal tower
+}
+
+.ad-ruby::before {
+  content: '\f047'; // gem
+}
+
+.ad-screen-full::before {
+  content: '\f066'; // full screen
+}
+
+.ad-home::before {
+  content: '\e021'; // house
+}
+
+.ad-image::before {
+  content: '\e90d'; // image
+}
+
+.ad-camera::before {
+  content: '\e90f'; // Camera
+}
+
+.ad-play::before {
+  content: '\e912'; // video
+}
+
+.ad-equalizer::before {
+  content: '\e992'; // Equalizer
+}
+
+.ad-headphones::before {
+  content: '\e910'; // headphones
+}
+
+.ad-message::before {
+  content: '\e945'; // letter
+}
+
+.ad-mail::before {
+  content: '\f0e0'; // envelope
+}
+
+.ad-man::before {
+  content: '\e055'; // the man
+}
+
+.ad-woman::before {
+  content: '\e056'; // woman
+}
+
+.ad-user::before {
+  content: '\e972'; // user
+}
+
+.ad-ring::before {
+  content: '\f0f3'; // Bell
+}
+
+.ad-gear::before {
+  content: '\e994'; // gear
+}
+
+.ad-increase::before {
+  content: '\ea7b'; // Right menu
+}
+
+.ad-decrease::before {
+  content: '\ea7c'; // Left menu
+}
+
+.ad-users::before {
+  content: '\e973'; // user group
+}
+
+.ad-poweroff::before {
+  content: '\f011'; // power supply
+}
+
+.ad-check::before {
+  content: '\e207'; // Check number
+}
+
+.ad-close::before {
+  content: '\e208'; // x number
+}
+
+.ad-into::before {
+  content: '\e161'; // enter
+}
+
+.ad-trash::before {
+  content: '\f014'; // Recycle bin
+}
+
+.ad-minus::before {
+  content: '\f068'; // Minus
+}
+
+.ad-plus::before {
+  content: '\ea0a'; // plus
+}
+
+.ad-refresh::before {
+  content: '\e030'; // Refresh
+}
+
+.ad-sync::before {
+  content: '\e082'; // Synchronize
+}
+
+.ad-enlarge::before {
+  content: '\e98b'; // expansion
+}
+
+.ad-shrink::before {
+  content: '\e98c'; // shrink
+}
+
+.ad-edit::before {
+  content: '\e151'; // edit
+}
+
+.ad-buret::before {
+  content: '\e091'; // dropper
+}
+
+.ad-finder::before {
+  content: '\eabf'; // os x finder
+}
+
+.ad-download::before {
+  content: '\e960'; // os x finder
+}
+
+.ad-upload::before {
+  content: '\e961'; // os x finder
+}
+
+.ad-info::before {
+  content: '\f129'; // os x finder
+}
+
+.ad-exclamation::before {
+  content: '\f12a'; // os x finder
+}
+
+.antui-icon.spin::before {
+  animation: loadingCircle 1s infinite linear;
+  display: inline-block;
+}
+
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: 50% 50%;
+  }
+}

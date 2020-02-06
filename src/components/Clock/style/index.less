@@ -1,0 +1,35 @@
+@import '../../../assets/styles/variables.less';
+.antui-clock {
+  > .date {
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    text-align: right;
+  }
+
+  > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+
+    > li {
+      display: inline;
+      font-family: Roboto;
+      font-size: 60px;
+      font-weight: 900;
+
+      &.point {
+        animation: 1s ease 0s normal none infinite flash;
+        padding: 0 4px;
+        position: relative;
+        top: -5px;
+      }
+    }
+  }
+}
+
+@keyframes flash {
+  0% {opacity: 1;}
+  50% {opacity: 0; }
+  100% {opacity: 1;}
+}

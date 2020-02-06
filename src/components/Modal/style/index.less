@@ -1,0 +1,68 @@
+.antui-modalform.ant-modal {
+  //& {
+  //  .ant-modal-body {}
+  //}
+
+  &.full-modal {
+    bottom: 20px;
+    left: 20px;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: auto !important;
+
+    .ant-modal-content {
+      height: 100%;
+      position: relative;
+
+      .ant-modal-body {
+        bottom: 53px;
+        left: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 55px;
+      }
+
+      .ant-modal-footer {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &.antui-table-modal {
+    .ant-modal-header {
+      .with-search-title {
+        align-items: center;
+        display: flex;
+
+        .left-title { flex: auto; }
+
+        .antui-searchbar { margin-right: 25px; }
+      }
+    }
+
+    .ant-modal-body {
+      max-height: 418px;
+      overflow: auto;
+      padding: 0;
+    }
+
+    .ant-modal-footer {
+      align-items: center;
+      display: flex;
+
+      .ant-pagination {
+        flex: auto;
+        text-align: left;
+      }
+    }
+  }
+}

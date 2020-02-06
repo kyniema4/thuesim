@@ -1,0 +1,15 @@
+.user-layout {
+  &.fixed.ant-layout,
+  &.fixed .full-layout.ant-layout {
+    bottom: 0;
+    left: 0;
+    position: absolute !important;
+    right: 0;
+    top: 0;
+
+    .ant-layout-sider > .ant-layout-sider-children {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+}

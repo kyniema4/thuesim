@@ -1,0 +1,277 @@
+@import '~animate.css/animate.css';
+@import '~antd/dist/antd.less';
+@import './variables.less';
+@import './iconfont.less';
+@import './animate.css';
+
+html,
+body,
+:global(#root) {
+  background: #f0f2f5;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 993px) {
+  .height-full {
+    height: 100vh;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: 500 !important; }
+
+.ant-input-affix-wrapper .ant-input:not(:first-child) { padding-left: 40px; }
+
+.anticon {
+  vertical-align: sub;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.ant-btn > .anticon { float: left; }
+
+.text-center { text-align: center; }
+
+.ant-menu {
+  .ant-menu-item > a,
+  .ant-menu-submenu-title span{
+    display: flex;
+    align-items: center;
+  }
+
+  &-dark {
+    &.ant-menu-inline,
+    &.ant-menu-vertical,
+    &.ant-menu-vertical-left,
+    &.ant-menu-vertical-right { margin-top: 30px; }
+
+    .ant-menu-item > a,
+    .ant-menu-submenu-title span {
+      .anticon { color: @grey-green400; }
+      &:hover .anticon { color: @grey-green300; }
+    }
+
+    .ant-menu-item-selected > a,
+    .ant-menu-submenu-open span {
+      .anticon {color: @white;}
+      &:hover .anticon { color: @white; }
+    }
+  }
+
+  .ant-menu-sub {
+    .ant-menu-item > a:hover {
+      color: @grey-green300;
+    }
+  }
+}
+
+.ant-select-arrow,
+.ant-cascader-picker-arrow,
+.ant-calendar-picker-clear,
+.ant-calendar-picker-icon { top: 45%; }
+
+.ant-calendar-picker-input { padding-right: 20px; }
+
+.ant-select-selection--single .ant-select-selection__rendered { margin-right: 30px; }
+
+.ant-pagination-item {
+  &:focus,
+  &:hover,
+  &-active {
+    background-color: @primary-color;
+
+    a { color: @white; }
+  }
+}
+
+.ant-list .anticon { margin-right: 5px; }
+
+@media print {
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background: transparent !important;
+    border-color: #333 !important;
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner::after {
+    border-color: #333 !important;
+  }
+}
+
+@media (min-width: 576px) {
+  /* Scroll bar style */
+  ::-webkit-scrollbar {
+    height: 10px;
+    width: 5px;
+    z-index: 30;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-left: 1px solid transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #637099;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #637099;
+  }
+
+  ::-webkit-scrollbar-track {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 0;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+
+  &:active {
+    color: @primary-7;
+  }
+
+  &:hover {
+    color: @primary-6;
+  }
+}
+
+code {
+  background-color: #f9f2f4;
+  border-radius: 1px;
+  color: #c7254e;
+  font-size: 90%;
+  padding: 2px 4px;
+}
+
+/* Rewrite antd default layout style */
+.ant-layout {
+  .ant-layout-header {
+    background: #fff;
+    height: auto;
+    line-height: normal;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .ant-layout-content {
+    min-height: auto; // override antd min-height: 0;
+    position: relative;
+    // overflow: auto;
+  }
+
+  .ant-layout-footer {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+// Layout in the routing page
+.page {
+  &.ant-layout {
+    > .ant-layout-content {
+      padding: 24px 24px 0;
+    }
+  }
+}
+
+// Long text does not wrap, if width is set, an ellipsis will appear if it exceeds
+.nobr {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Clean up floating
+.clearfix {
+  zoom: 1;
+
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+.flex {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-auto {
+  flex: auto;
+  height: 100%;
+  position: relative;
+}
+
+.flex-auto-hidden {
+  .flex-auto;
+  overflow: hidden;
+}
+
+.flex-none {
+  flex: none;
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.abs-full {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
