@@ -47,14 +47,7 @@
 
   "routes.Blank.blankPage": "Blank page",
 
-  "routes.Dashboard.engineering": "Engineering road",
-  "routes.Dashboard.weChat": "WeChat",
-  "routes.Dashboard.dataPanel": "Data panel component",
-  "routes.Dashboard.salesDistribution": "Sales distribution",
-  "routes.Dashboard.storeRanking": "Store sales ranking",
-  "routes.Dashboard.lineChart": "Line chart",
-  "routes.Dashboard.pieChart": "Pie chart",
-  "routes.Dashboard.histogram": "Histogram",
+  "routes.Dashboard.notification": "Notification",
 
   "routes.Alerts.notification": "Notification",
   "routes.Alerts.notificationNormal": "Normal notice",
@@ -256,7 +249,13 @@
   "components.layout.Closecurrent": "Close current",
   "components.layout.Closeother": "Close other",
   "components.layout.Closeall": "Close all",
-  "components.layout.operating": "Operating"
+  "components.layout.operating": "Operating",
+
+  "components.dashboardwidget.totalMoney": "Total money",
+  "components.dashboardwidget.used": "Used",
+  "components.dashboardwidget.totalCode": "Total code",
+  "components.dashboardwidget.totalError": "Total error",
+  "components.dashboardwidget.fromLastWeek": "From last week"
 }
 
 

@@ -48,14 +48,7 @@
 
   "routes.Blank.blankPage": "Trang trống",
 
-  "routes.Dashboard.engineering": "Đường kỹ thuật",
-  "routes.Dashboard.weChat": "Chúng tôi",
-  "routes.Dashboard.dataPanel": "Thành phần bảng dữ liệu",
-  "routes.Dashboard.salesDistribution": "Phân phối bán hàng",
-  "routes.Dashboard.storeRanking": "Cửa hàng xếp hạng doanh số",
-  "routes.Dashboard.lineChart": "Biểu đồ đường",
-  "routes.Dashboard.pieChart": "Biểu đồ hình tròn",
-  "routes.Dashboard.histogram": "Biểu đồ",
+  "routes.Dashboard.notification": "Thông báo",
 
   "routes.Alerts.notification": "Thông báo",
   "routes.Alerts.notificationNormal": "Thông báo bình thường",
@@ -256,5 +249,11 @@
   "components.layout.Closecurrent": "Đóng tab hiện tại",
   "components.layout.Closeother": "Đóng tab khác",
   "components.layout.Closeall": "Đóng tất cả",
-  "components.layout.operating": "Điều hành"
+  "components.layout.operating": "Điều hành",
+
+  "components.dashboardwidget.totalMoney": "Tổng số tiền",
+  "components.dashboardwidget.used": "Đã sử dụng",
+  "components.dashboardwidget.totalCode": "Tổng code",
+  "components.dashboardwidget.totalError": "Tổng lỗi",
+  "components.dashboardwidget.fromLastWeek": "Từ tuần trước"
 }
