@@ -147,8 +147,17 @@ class Dashboard extends BaseComponent {
             },
         ];
         const formItemLayout = {
-            labelCol: { span: 6, },
-            wrapperCol: { span: 8 },
+            labelCol: {
+                xs: {
+                    span: 7,
+                    offset: 0,
+                },
+                sm: {
+                    span: 7,
+                    offset: 2,
+                },
+            },
+            wrapperCol: { span: 10 },
         };
         return (
             <Layout className="full-layout page dashboard-page">
@@ -186,7 +195,7 @@ class Dashboard extends BaseComponent {
                             </List>
                         </InfiniteScroll>
                     </Panel>
-                    <Panel title={intl.formatMessage(messages.getCode)}>
+                    <Panel title={intl.formatMessage(messages.getCode)} className="panel-service">
                         <Steps progressDot current={current}>
                             {steps.map(item => (
                                 <Step key={item.title} title={item.title} description={item.description}/>
@@ -214,7 +223,8 @@ class Dashboard extends BaseComponent {
                                         </Select>
                                     </Form.Item>
                                     <Form.Item>
-                                        <Button onClick={() => this.next()}>next</Button>
+                                        <Button disabled>Finish</Button>
+                                        <Button onClick={() => this.next()} className="next-btn">Next</Button>
                                     </Form.Item>
                                 </Form>
                             )}
@@ -224,19 +234,17 @@ class Dashboard extends BaseComponent {
                                        <Input />
                                     </Form.Item>
                                     <Form.Item>
-                                        <Button onClick={() => this.next()}>next</Button>
+                                        <Button disabled>Finish</Button>
+                                        <Button onClick={() => this.next()}>Next</Button>
                                     </Form.Item>
                                 </Form>
                             )}
                             {current === 2 && (
                                 <Row type="flex" justify="center" className="list-row">
                                     <Col md={16} xl={8} className="list-input list-radio">
-                                        {/*<Paragraph className="text-customer text-center">*/}
-                                        {/*    {intl.formatMessage(messages.takeAMoment)}*/}
-                                        {/*</Paragraph>*/}
-
-                                        <div className="text-center mt30">
-                                            <Button onClick={() => this.next()}>Ok</Button>
+                                        <div>
+                                            <Button disabled>Finish</Button>
+                                            <Button onClick={() => this.next()}>Next</Button>
                                         </div>
                                     </Col>
                                 </Row>
@@ -244,7 +252,8 @@ class Dashboard extends BaseComponent {
                             {current === 3 && (
                                 <Row type="flex" justify="center" className="list-row">
                                     <Col md={16} xl={8} className="list-input">
-
+                                        <Button >Finish</Button>
+                                        <Button disabled onClick={() => this.next()}>Next</Button>
                                     </Col>
                                 </Row>
                             )}
