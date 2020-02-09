@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'dva';
-import {Layout, Col, Row, Form, Typography, List, message, Avatar, Spin} from 'antd';
+import {Layout, Col, Row, Form, Typography, List, message, Avatar, Spin, Steps, Button, Select, Input} from 'antd';
 import DataSet from '@antv/data-set';
 import intl from 'react-intl-universal';
 import PropTypes from 'prop-types';
@@ -11,58 +11,245 @@ import DashboardWidget from '../../../components/DashboardWidget';
 import Panel from '../../../components/Panel';
 import './index.less';
 
-const {Content} = Layout;
-const {Title, Text, Paragraph} = Typography;
+import reqwest from 'reqwest';
+import InfiniteScroll from 'react-infinite-scroller';
 
+const fakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
+const {Content} = Layout;
+const {Step} = Steps;
+const {Title, Text, Paragraph} = Typography;
 const data = [
     {
-        title: 'Ant Design Title 1',
-    },
-    {
-        title: 'Ant Design Title 2',
-    },
-    {
-        title: 'Ant Design Title 3',
-    },
-    {
-        title: 'Ant Design Title 4',
-    },
+        id: 1,
+        name: 'admin',
+        email: 'Thong bao mot',
+        time: '2020-06-02 09:41:16'
+    }, {
+        id: 2,
+        name: 'admin',
+        email: 'Thong bao hai',
+        time: '2020-06-02 09:41:16'
+    }, {
+        id: 3,
+        name: 'admin',
+        email: 'Thong bao ba',
+        time: '2020-06-02 09:41:16'
+    }, {
+        name: 'admin',
+        email: 'Thong bao bon',
+        time: '2020-06-02 09:41:16'
+    }
 ];
 
+
+function onBlur() {
+    console.log('blur');
+}
+
+function onFocus() {
+    console.log('focus');
+}
 @connect(({dashboard}) => ({
     dashboard
 }))
 class Dashboard extends BaseComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            current: 0,
+        };
+    }
     state = {
-        data: [],
         loading: false,
         hasMore: true,
-        intl: PropTypes.object,
     };
 
+    componentDidMount() {
+        this.fetchData(res => {
+            this.setState({
+                data: res.results,
+            });
+        });
+    }
+
+    fetchData = callback => {
+        reqwest({
+            url: fakeDataUrl,
+            type: 'json',
+            method: 'get',
+            contentType: 'application/json',
+            success: res => {
+                callback(res);
+            },
+        });
+    };
+
+    handleInfiniteOnLoad = () => {
+        let {data} = this.state;
+        this.setState({
+            loading: true,
+        });
+        if (data.length > 3) {
+            message.warning('Infinite List loaded all');
+            this.setState({
+                hasMore: false,
+                loading: false,
+            });
+            return;
+        }
+        this.fetchData(res => {
+            data = data.concat(res.results);
+            this.setState({
+                data,
+                loading: false,
+            });
+        });
+    };
+
+    next() {
+        const current = this.state.current + 1;
+        this.setState({current});
+    }
+
+    onChange(value) {
+        this.setState({ roomId: value })
+    }
     render() {
         const {dashboard} = this.props;
-
+        const {current} = this.state;
+        const steps = [
+            {
+                title: 'Step 1',
+                description: intl.formatMessage(messages.chooseSerive)
+            }, {
+                title: 'Step 2',
+                description: intl.formatMessage(messages.phone)
+            }, {
+                title: 'Step 3',
+                description: intl.formatMessage(messages.getSimcode)
+            }, {
+                title: 'Step 4',
+                description: intl.formatMessage(messages.complete)
+            },
+        ];
+        const serviceData = [
+            {
+                id: '1',
+                serviceName: 'Dich vu mot'
+            },
+            {
+                id: '2',
+                serviceName: 'Dich vu hai'
+            },
+            {
+                id: '3',
+                serviceName: 'Dich vu ba'
+            },
+        ];
+        const formItemLayout = {
+            labelCol: { span: 6, },
+            wrapperCol: { span: 8 },
+        };
         return (
             <Layout className="full-layout page dashboard-page">
                 <Content>
-                   <DashboardWidget/>
-                   <Panel title={intl.formatMessage(messages.notification)}>
-                       <List
-                           itemLayout="horizontal"
-                           dataSource={data}
-                           renderItem={item => (
-                               <List.Item>
-                                   <List.Item.Meta
-                                       avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                       title={<a href="https://ant.design">{item.title}</a>}
-                                       description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                                   />
-                                   <div>Content</div>
-                               </List.Item>
-                           )}
-                           />
-                   </Panel>
+                    <DashboardWidget/>
+                    <Panel title={intl.formatMessage(messages.notification)} className="panel-notify"
+                           style={{height: 300}}>
+                        <InfiniteScroll
+                            initialLoad={false}
+                            pageStart={0}
+                            loadMore={this.handleInfiniteOnLoad}
+                            hasMore={!this.state.loading && this.state.hasMore}
+                            useWindow={false}
+                        >
+                            <List
+                                dataSource={data}
+                                renderItem={item => (
+                                    <List.Item key={item.id}>
+                                        <List.Item.Meta
+                                            avatar={
+                                                <Avatar src="../images/admin.png" size="large"/>
+                                            }
+                                            title={<text>{item.name}</text>}
+                                            description={item.email}
+                                        />
+                                        <div className="notyfi-time">{item.time}</div>
+                                    </List.Item>
+                                )}
+                            >
+                                {this.state.loading && this.state.hasMore && (
+                                    <div className="demo-loading-container">
+                                        <Spin/>
+                                    </div>
+                                )}
+                            </List>
+                        </InfiniteScroll>
+                    </Panel>
+                    <Panel title={intl.formatMessage(messages.getCode)}>
+                        <Steps progressDot current={current}>
+                            {steps.map(item => (
+                                <Step key={item.title} title={item.title} description={item.description}/>
+                            ))}
+                        </Steps>
+                        <div className="steps-content">
+                            {current === 0 && (
+                                <Form {...formItemLayout}>
+                                    <Form.Item label={intl.formatMessage(messages.chooseSeriveAndNext)}>
+                                        <Select
+                                            showSearchs
+                                            optionFilterProp="children"
+                                            onChange={(e) => this.onChange(e)}
+                                            onFocus={onFocus}
+                                            onBlur={onBlur}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {serviceData.map(item => (
+                                                <Select.Option key={item.id} value={item.id} >{item.serviceName}</Select.Option>
+                                            ))}
+
+
+                                        </Select>
+                                    </Form.Item>
+                                    <Form.Item>
+                                        <Button onClick={() => this.next()}>next</Button>
+                                    </Form.Item>
+                                </Form>
+                            )}
+                            {current === 1 && (
+                                <Form {...formItemLayout}>
+                                    <Form.Item label={intl.formatMessage(messages.phoneAndNext)}>
+                                       <Input />
+                                    </Form.Item>
+                                    <Form.Item>
+                                        <Button onClick={() => this.next()}>next</Button>
+                                    </Form.Item>
+                                </Form>
+                            )}
+                            {current === 2 && (
+                                <Row type="flex" justify="center" className="list-row">
+                                    <Col md={16} xl={8} className="list-input list-radio">
+                                        {/*<Paragraph className="text-customer text-center">*/}
+                                        {/*    {intl.formatMessage(messages.takeAMoment)}*/}
+                                        {/*</Paragraph>*/}
+
+                                        <div className="text-center mt30">
+                                            <Button onClick={() => this.next()}>Ok</Button>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            )}
+                            {current === 3 && (
+                                <Row type="flex" justify="center" className="list-row">
+                                    <Col md={16} xl={8} className="list-input">
+
+                                    </Col>
+                                </Row>
+                            )}
+                        </div>
+                    </Panel>
                 </Content>
             </Layout>
         );

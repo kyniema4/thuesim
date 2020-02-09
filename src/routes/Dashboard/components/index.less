@@ -1,36 +1,34 @@
 @import '../../../assets/styles/variables.less';
 
 .dashboard-page {
-  @media (min-width: 768px) {
-    .sales-order { display: block !important; }
-  }
+  .panel-notify {
+    .antui-panel {
+      &-body {
+       overflow: scroll;
 
-  .sales-order {
-    display: none;
-    padding: 0 10px 0 40px;
-    width: 300px;
+        >.panel-content {
+          padding: 0 25px!important;
+        }
+      }
+    }
 
-    ul {
-      margin-top: 20px;
-
-      li {
-        margin-top: 10px;
-
-        span:first-child {
-          background: #efefef;
-          border-radius: 20px;
-          color: #333;
-          display: inline-block;
+    .ant-list {
+      &-item-meta {
+        &-title {
+          margin-bottom: 0;
+          color: @grey500;
           font-size: 12px;
-          font-weight: 700;
-          height: 20px;
-          line-height: 20px;
-          margin-right: 20px;
-          text-align: center;
-          width: 20px;
         }
 
-        span:last-child { float: right; }
+        &-description {
+          color: @dark800;
+          font-size: 14px;
+        }
+      }
+
+      .notyfi-time {
+        color: @grey-green450;
+        font-size: 12px;
       }
     }
   }

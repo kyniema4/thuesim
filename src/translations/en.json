@@ -48,6 +48,13 @@
   "routes.Blank.blankPage": "Blank page",
 
   "routes.Dashboard.notification": "Notification",
+  "routes.Dashboard.getCode": "Get the code online",
+  "routes.Dashboard.chooseSerive": "Choose Service",
+  "routes.Dashboard.phone": "Phone Number",
+  "routes.Dashboard.getSimcode": "Get SimCode",
+  "routes.Dashboard.complete": "Complete",
+  "routes.Dashboard.chooseSeriveAndNext": "Choose service then press Next",
+  "routes.Dashboard.phoneAndNext": "Enter phone number then press Next",
 
   "routes.Alerts.notification": "Notification",
   "routes.Alerts.notificationNormal": "Normal notice",

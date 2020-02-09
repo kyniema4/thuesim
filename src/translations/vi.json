@@ -49,6 +49,13 @@
   "routes.Blank.blankPage": "Trang trống",
 
   "routes.Dashboard.notification": "Thông báo",
+  "routes.Dashboard.getCode": "Lấy code trực tuyến",
+  "routes.Dashboard.chooseSerive": "Chọn Dịch Vụ",
+  "routes.Dashboard.phone": "Số Điện Thoại",
+  "routes.Dashboard.getSimcode": "Nhận SimCode",
+  "routes.Dashboard.complete": "Hoàn Thành",
+  "routes.Dashboard.chooseSeriveAndNext": "Chọn dịch vụ sau đó bấm Next",
+  "routes.Dashboard.phoneAndNext": "Nhập số điện thoại sau đó bấm Next",
 
   "routes.Alerts.notification": "Thông báo",
   "routes.Alerts.notificationNormal": "Thông báo bình thường",
