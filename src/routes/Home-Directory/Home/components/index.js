@@ -6,9 +6,9 @@ import intl from 'react-intl-universal';
 import PropTypes from 'prop-types';
 import messages from '../messages';
 
-import BaseComponent from '../../../components/BaseComponent';
-import DashboardWidget from '../../../components/DashboardWidget';
-import Panel from '../../../components/Panel';
+import BaseComponent from '../../../../components/BaseComponent';
+import DashboardWidget from '../../../../components/DashboardWidget';
+import Panel from '../../../../components/Panel';
 import './index.less';
 
 import reqwest from 'reqwest';

@@ -1,5 +1,5 @@
 // Page style
-@import '../../../assets/styles/variables.less';
+@import '../../../../assets/styles/variables.less';
 .home-page {
   .panel-notify {
   .antui-panel {
@@ -56,8 +56,23 @@
       .ant-steps-item-wait > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-description {
         color: @black045;
       }
+      .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot,
+      .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after {
+        background-color: @blue500;
+      }
+
     }
 
+    .ant-steps-dot .ant-steps-item-process .ant-steps-item-icon,
+    .ant-steps-dot.ant-steps-small .ant-steps-item-process .ant-steps-item-icon {
+      width: 15px;
+      height: 15px;
+      line-height: 10px;
+      margin-left: 65px;
+    }
+    .ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
+      background-color: @blue500;
+    }
     .steps-content {
       margin-top: 1rem;
     }
@@ -67,6 +82,18 @@
         color: @grey-green450;
         font-size: 14px;
         font-weight: 400 !important;
+      }
+    }
+
+    .div-text-complete {
+      text-align: center;
+      margin-top: 1rem;
+
+      .ant-typography {
+        color: @grey-green450;
+        font-size: 14px;
+        font-weight: 400 !important;
+        margin-bottom: 2em;
       }
     }
 

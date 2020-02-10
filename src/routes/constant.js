@@ -30,5 +30,8 @@ export const routerLinks = {
   Dashboard: '/administrator/dashboard',
   Blank: '/administrator/blank',
   DropDrag: '/administrator/dropdrag',
-  Home: '/administrator/home'
+  Home: '/administrator/home',
+  AddBalanceNumber: '/administrator/addbalancenumber',
+  AutoApi: '/administrator/autoapi',
+  History: '/administrator/history'
 }

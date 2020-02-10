@@ -263,7 +263,10 @@
   "components.dashboardwidget.used": "Used",
   "components.dashboardwidget.totalCode": "Total code",
   "components.dashboardwidget.totalError": "Total error",
-  "components.dashboardwidget.fromLastWeek": "From last week"
+  "components.dashboardwidget.fromLastWeek": "From last week",
+  "routes.addbalancenumber.blankPage": "Blank page",
+  "routes.autoapi.blankPage": "Blank page",
+  "routes.history.blankPage": "Blank page"
 }
 
 

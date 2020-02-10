@@ -30,7 +30,12 @@ import Button from './UI/Button';
 import Dashboard from './Dashboard';
 import Blank from './Blank';
 
-import Home from './Home';
+import Home from './Home-Directory/Home';
+
+import AddBalanceNumber from './Home-Directory/AddBalanceNumber';
+
+import AutoApi from './Home-Directory/AutoApi';
+import History from './Home-Directory/History';
 
 const routesConfig = app => [
   {
@@ -59,6 +64,9 @@ const routesConfig = app => [
       Dashboard(app),
       Blank(app),
       // 💬 generate admin to here
+      History(app),
+      AutoApi(app),
+      AddBalanceNumber(app),
       Home(app),
     ]
   },

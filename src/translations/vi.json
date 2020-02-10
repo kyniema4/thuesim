@@ -264,5 +264,8 @@
   "components.dashboardwidget.totalCode": "Tổng code",
   "components.dashboardwidget.totalError": "Tổng lỗi",
   "components.dashboardwidget.fromLastWeek": "Từ tuần trước"
-
+,
+  "routes.addbalancenumber.blankPage": "Trang trống",
+  "routes.autoapi.blankPage": "Trang trống",
+  "routes.history.blankPage": "Trang trống"
 }
