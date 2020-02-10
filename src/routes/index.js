@@ -29,7 +29,8 @@ import Button from './UI/Button';
 
 import Dashboard from './Dashboard';
 import Blank from './Blank';
-import Home from './Frontend/Home';
+
+import Home from './Home';
 
 const routesConfig = app => [
   {
@@ -58,6 +59,7 @@ const routesConfig = app => [
       Dashboard(app),
       Blank(app),
       // 💬 generate admin to here
+      Home(app),
     ]
   },
   {

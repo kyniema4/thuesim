@@ -48,14 +48,15 @@
 
   "routes.Blank.blankPage": "Trang trống",
 
-  "routes.Dashboard.notification": "Thông báo",
-  "routes.Dashboard.getCode": "Lấy code trực tuyến",
-  "routes.Dashboard.chooseSerive": "Chọn Dịch Vụ",
-  "routes.Dashboard.phone": "Số Điện Thoại",
-  "routes.Dashboard.getSimcode": "Nhận SimCode",
-  "routes.Dashboard.complete": "Hoàn Thành",
-  "routes.Dashboard.chooseSeriveAndNext": "Chọn dịch vụ sau đó bấm Next",
-  "routes.Dashboard.phoneAndNext": "Nhập số điện thoại sau đó bấm Next",
+  "routes.Home.notification": "Thông báo",
+  "routes.Home.getCode": "Lấy code trực tuyến",
+  "routes.Home.chooseSerive": "Chọn Dịch Vụ",
+  "routes.Home.phone": "Số Điện Thoại",
+  "routes.Home.getSimcode": "Nhận SimCode",
+  "routes.Home.complete": "Hoàn Thành",
+  "routes.Home.chooseSeriveAndNext": "Chọn dịch vụ sau đó bấm Next",
+  "routes.Home.phoneAndNext": "Nhập số điện thoại sau đó bấm Next",
+  "routes.Home.getCodeHere": "Nhận mã ở đây sau đó bấm Next",
 
   "routes.Alerts.notification": "Thông báo",
   "routes.Alerts.notificationNormal": "Thông báo bình thường",
@@ -263,4 +264,5 @@
   "components.dashboardwidget.totalCode": "Tổng code",
   "components.dashboardwidget.totalError": "Tổng lỗi",
   "components.dashboardwidget.fromLastWeek": "Từ tuần trước"
+
 }

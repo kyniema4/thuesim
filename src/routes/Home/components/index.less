@@ -1,37 +1,37 @@
+// Page style
 @import '../../../assets/styles/variables.less';
-
-.dashboard-page {
+.home-page {
   .panel-notify {
-    .antui-panel {
-      &-body {
-        overflow: scroll;
+  .antui-panel {
+    &-body {
+      overflow: scroll;
 
-        > .panel-content {
-          padding: 0 25px !important;
-        }
-      }
-    }
-
-    .ant-list {
-      &-item-meta {
-        &-title {
-          margin-bottom: 0;
-          color: @grey500;
-          font-size: 12px;
-        }
-
-        &-description {
-          color: @dark800;
-          font-size: 14px;
-        }
-      }
-
-      .notyfi-time {
-        color: @grey-green450;
-        font-size: 12px;
+      > .panel-content {
+        padding: 0 25px !important;
       }
     }
   }
+
+  .ant-list {
+    &-item-meta {
+      &-title {
+        margin-bottom: 0;
+        color: @grey500;
+        font-size: 12px;
+      }
+
+      &-description {
+        color: @dark800;
+        font-size: 14px;
+      }
+    }
+
+    .notyfi-time {
+      color: @grey-green450;
+      font-size: 12px;
+    }
+  }
+}
 
   .panel-service {
     .ant-steps {

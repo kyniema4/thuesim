@@ -1,4 +1,4 @@
-import modelEnhance from '../../../../utils/modelEnhance';
+import modelEnhance from '../../../utils/modelEnhance';
 
 export default modelEnhance({
   namespace: 'home',
