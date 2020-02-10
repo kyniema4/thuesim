@@ -270,7 +270,7 @@ class Home extends BaseComponent {
                 )}
                 {current === 3 && (
                     <div>
-                      <div>
+                      <div className="div-text-complete">
                         <Paragraph>Get the code online is complete!</Paragraph>
                       </div>
                       <div className="div-btn">
