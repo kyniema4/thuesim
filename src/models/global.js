@@ -71,6 +71,16 @@ export default modelEnhance({
             { name: 'Drop Drag', path: routerLinks['DropDrag'], },
           ],
         },
+        {
+          name: 'About Us',
+          icon: 'book',
+          path: '',
+          children: [
+            { name: 'SIMCODE PAGE', path: 'https://www.facebook.com' },
+            { name: 'ADMIN', path: 'https://www.facebook.com' },
+            { name: 'About Developer', path: 'https://www.facebook.com' },
+          ],
+        },
       ]
       const loopMenu = (menu, pitem = {}) => {
         menu.forEach(item => {
