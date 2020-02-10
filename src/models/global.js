@@ -72,13 +72,22 @@ export default modelEnhance({
           ],
         },
         {
-          name: 'About Us',
-          icon: 'book',
+          name: 'Sellers',
+          icon: 'setting',
+          path: '/administrator/page',
+          children: [
+            { name: 'Dashboard', path: routerLinks['Blank'], },
+            
+          ],
+        },
+        {
+          name: 'LIÊN HỆ',
+          icon: 'idcard',
           path: '',
           children: [
-            { name: 'SIMCODE PAGE', path: 'https://www.facebook.com' },
-            { name: 'ADMIN', path: 'https://www.facebook.com' },
-            { name: 'About Developer', path: 'https://www.facebook.com' },
+            { name: 'TRANG SIMCODE', path: 'https://www.facebook.com' },
+            { name: 'QUẢN TRỊ VIÊN', path: 'https://www.facebook.com' },
+            { name: 'NHÀ PHÁT TRIỂN', path: 'https://www.facebook.com' },
           ],
         },
       ]
