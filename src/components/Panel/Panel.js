@@ -98,6 +98,7 @@ class Panel extends Component {
       theme,
       className,
       title,
+      address,
       width,
       height,
       style,
@@ -130,7 +131,10 @@ class Panel extends Component {
     const Header =
       typeof header === 'undefined' ? (
         <div className={`${prefix}-header`}>
-          <span className={`${prefix}-header-title`}>{title}</span>
+         <span className={`${prefix}-header-title-div`}>
+            <span className={`${prefix}-header-title`}>{title}</span>
+          <span className={`${prefix}-header-address`}>{address}</span>
+         </span>
           <span className={`${prefix}-header-controls`}>
             <a role="presentation" className="panel-control-loader" onClick={this.onRefresh}>
               <Icon type="refresh" />
@@ -196,6 +200,7 @@ Panel.propTypes = {
   prefix: PropTypes.string,
   className: PropTypes.string,
   title: PropTypes.any,
+  address: PropTypes.any,
   width: PropTypes.number,
   height: PropTypes.number,
   style: PropTypes.string,

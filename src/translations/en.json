@@ -56,6 +56,10 @@
   "routes.Home.chooseSeriveAndNext": "Choose service then press Next",
   "routes.Home.phoneAndNext": "Enter phone number then press Next",
   "routes.Home.getCodeHere": "Get code here then press Next",
+  "routes.Home.getCodeComplete": "Get the code online completed!",
+  "routes.Home.history": "History",
+  "routes.Home.registerService": "Register service",
+  "routes.Home.getCodeHistory": "Getcode code history",
 
   "routes.Alerts.notification": "Notification",
   "routes.Alerts.notificationNormal": "Normal notice",
@@ -263,7 +267,8 @@
   "components.dashboardwidget.used": "Used",
   "components.dashboardwidget.totalCode": "Total code",
   "components.dashboardwidget.totalError": "Total error",
-  "components.dashboardwidget.fromLastWeek": "From last week",
+  "components.dashboardwidget.fromLastWeek": "From last week"
+,
   "routes.addbalancenumber.blankPage": "Blank page",
   "routes.autoapi.blankPage": "Blank page",
   "routes.history.blankPage": "Blank page"

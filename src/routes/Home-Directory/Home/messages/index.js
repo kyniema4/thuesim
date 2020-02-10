@@ -46,4 +46,16 @@ export default ({
     id: `${scope}.getCodeComplete`,
     defaultMessage: 'Get the code online completed!',
   },
+  history: {
+    id: `${scope}.history`,
+    defaultMessage: 'History',
+  },
+  registerService: {
+    id: `${scope}.registerService`,
+    defaultMessage: 'Register service',
+  },
+  getCodeHistory: {
+    id: `${scope}.getCodeHistory`,
+    defaultMessage: 'Getcode code history',
+  },
 });

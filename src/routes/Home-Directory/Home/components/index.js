@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'dva';
-import {Layout, Col, Row, Form, Typography, List, message, Avatar, Spin, Steps, Button, Select, Input} from 'antd';
+import {Layout, Table, Form, Typography, List, message, Avatar, Spin, Steps, Button, Select, Input} from 'antd';
 import DataSet from '@antv/data-set';
 import intl from 'react-intl-universal';
 import PropTypes from 'prop-types';
@@ -41,7 +41,45 @@ const data = [
   }
 ];
 
-
+const columns = [
+  {
+    title: 'ID',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: 'Time',
+    dataIndex: 'time',
+    key: 'time',
+  },
+  {
+    title: 'SimID',
+    dataIndex: 'simID',
+    key: 'simID',
+  },
+  {
+    title: 'Type',
+    dataIndex: 'type',
+    key: 'type',
+  },
+  {
+    title: 'Value',
+    dataIndex: 'value',
+    key: 'value',
+  },
+  {
+    title: 'Status',
+    dataIndex: 'status',
+    key: 'status',
+  },
+  {
+    title: 'CodeRequest',
+    dataIndex: 'codeRequest',
+    key: 'codeRequest',
+    width: 150
+  },
+];
+const historyData = [];
 function onBlur() {
   console.log('blur');
 }
@@ -150,16 +188,24 @@ class Home extends BaseComponent {
     ];
     const formItemLayout = {
       labelCol: {
-        xs: {
-          span: 7,
+        md: {
+          span: 24,
           offset: 0,
         },
-        sm: {
+        lg: {
           span: 7,
           offset: 2,
         },
       },
-      wrapperCol: {span: 10},
+      wrapperCol: {
+        md: {
+          span: 24,
+          offset: 0,
+        },
+        lg: {
+          span: 10,
+          offset: 0,
+        },},
     };
     return (
         <Layout className="full-layout page home-page">
@@ -198,6 +244,7 @@ class Home extends BaseComponent {
               </InfiniteScroll>
             </Panel>
             <Panel title={intl.formatMessage(messages.getCode)} className="panel-service">
+              <Paragraph className="panel-subtitle">{intl.formatMessage(messages.registerService)}</Paragraph>
               <Steps progressDot current={current}>
                 {steps.map(item => (
                     <Step key={item.title} title={item.title} description={item.description}/>
@@ -271,7 +318,7 @@ class Home extends BaseComponent {
                 {current === 3 && (
                     <div>
                       <div className="div-text-complete">
-                        <Paragraph>Get the code online is complete!</Paragraph>
+                        <Paragraph>{intl.formatMessage(messages.getCodeComplete)}</Paragraph>
                       </div>
                       <div className="div-btn">
                         <Button className="next-btn">Finish</Button>
@@ -281,6 +328,10 @@ class Home extends BaseComponent {
                     </div>
                 )}
               </div>
+            </Panel>
+            <Panel title={intl.formatMessage(messages.history)} address="abc@gmail.com" className="panel-history">
+              <Paragraph className="panel-subtitle">{intl.formatMessage(messages.getCodeHistory)}</Paragraph>
+            <Table columns={columns} dataSource={historyData} size="middle" bordered />
             </Panel>
           </Content>
         </Layout>

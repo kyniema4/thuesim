@@ -1,6 +1,12 @@
 // Page style
 @import '../../../../assets/styles/variables.less';
 .home-page {
+  .panel-subtitle {
+    color: @grey-green400;
+    font-size: 14px;
+    font-weight: 400!important;
+  }
+
   .panel-notify {
   .antui-panel {
     &-body {
@@ -34,6 +40,12 @@
 }
 
   .panel-service {
+    .antui-panel-body .panel-content {
+      padding: 10px 25px 25px 25px;
+      @media screen and (max-width: 576px) {
+        overflow-x: scroll;
+      }
+    }
     .ant-steps {
       &-item-title {
         font-size: 16px;
@@ -58,7 +70,7 @@
       }
       .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot,
       .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after {
-        background-color: @blue500;
+        background-color: @blue-light500;
       }
 
     }
@@ -70,18 +82,46 @@
       line-height: 10px;
       margin-left: 65px;
     }
+
     .ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
-      background-color: @blue500;
+      background-color: @blue-light500;
     }
+
     .steps-content {
       margin-top: 1rem;
     }
 
     .ant-form {
-      .ant-form-item-label > label {
-        color: @grey-green450;
-        font-size: 14px;
-        font-weight: 400 !important;
+      .ant-col {
+        white-space: normal;
+        line-height: 22px;
+      }
+      .ant-form-item {
+        display: flex;
+        align-items: center;
+
+        &-label > label {
+          color: @grey-green450;
+          font-size: 14px;
+          font-weight: 400 !important;
+        }
+      }
+
+      .ant-select {
+        &-focused .ant-select-selection,
+        &-selection:focus,
+        &-selection:active {
+          border-color: @blue500;
+        }
+        &-selection:hover {
+          border-color: @blue500;
+          border-right-width: 1px !important;
+        }
+      }
+
+      .ant-input:focus,
+      .ant-input:hover {
+        border-color: @blue500;
       }
     }
 
@@ -116,6 +156,19 @@
         border-radius: 4px;
         margin-right: 0.5rem;
       }
+    }
+  }
+
+  .panel-history {
+    .ant-table-thead > tr > th {
+      color: @dark800;
+      font-size: 14px;
+      font-weight: 500!important;
+    }
+    .ant-table {
+      color: @dark800;
+      font-size: 14px;
+      font-weight: 400!important;
     }
   }
 }
