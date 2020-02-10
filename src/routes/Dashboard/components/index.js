@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Layout } from 'antd';
+import { Layout, Button } from 'antd';
 import intl from 'react-intl-universal';
 import Panel from '../../../components/Panel';
 import BaseComponent from '../../../components/BaseComponent';

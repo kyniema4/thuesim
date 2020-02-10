@@ -74,12 +74,12 @@ export default modelEnhance({
         {
           name: 'HOME',
           icon: 'home',
-          path: '',
+          path: '/administrator/home-directoty',
           children: [
-            { name: 'Home', path: routerLinks['Dashboard'], },
-            { name: 'Nạp số dư', path: routerLinks['Dashboard'], },
-            { name: 'Auto API', path: routerLinks['Dashboard'], },
-            { name: 'Lịch sử', path: routerLinks['Dashboard'], },
+            { name: 'Home', path: routerLinks['Home'], },
+            { name: 'Nạp số dư', path: routerLinks['AddBalanceNumber'], },
+            { name: 'Auto API', path: routerLinks['AutoApi'], },
+            { name: 'Lịch sử', path: routerLinks['History'], },
             
           ],
         },
