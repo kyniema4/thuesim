@@ -72,11 +72,23 @@ export default modelEnhance({
           ],
         },
         {
-          name: 'Sellers',
-          icon: 'setting',
-          path: '/administrator/page',
+          name: 'HOME',
+          icon: 'home',
+          path: '',
           children: [
-            { name: 'Dashboard', path: routerLinks['Blank'], },
+            { name: 'Home', path: routerLinks['Dashboard'], },
+            { name: 'Nạp số dư', path: routerLinks['Dashboard'], },
+            { name: 'Auto API', path: routerLinks['Dashboard'], },
+            { name: 'Lịch sử', path: routerLinks['Dashboard'], },
+            
+          ],
+        },
+        {
+          name: 'NGƯỜI BÁN',
+          icon: 'setting',
+          path: '',
+          children: [
+            { name: 'Dashboard', path: routerLinks['Dashboard'], },
             
           ],
         },
