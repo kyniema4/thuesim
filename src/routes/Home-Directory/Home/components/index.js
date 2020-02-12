@@ -19,324 +19,328 @@ const {Content} = Layout;
 const {Step} = Steps;
 const {Title, Text, Paragraph} = Typography;
 const data = [
-  {
-    id: 1,
-    name: 'admin',
-    email: 'Thong bao mot',
-    time: '2020-06-02 09:41:16'
-  }, {
-    id: 2,
-    name: 'admin',
-    email: 'Thong bao hai',
-    time: '2020-06-02 09:41:16'
-  }, {
-    id: 3,
-    name: 'admin',
-    email: 'Thong bao ba',
-    time: '2020-06-02 09:41:16'
-  }, {
-    name: 'admin',
-    email: 'Thong bao bon',
-    time: '2020-06-02 09:41:16'
-  }
+    {
+        id: 1,
+        name: 'admin',
+        email: 'Thong bao mot',
+        time: '2020-06-02 09:41:16'
+    }, {
+        id: 2,
+        name: 'admin',
+        email: 'Thong bao hai',
+        time: '2020-06-02 09:41:16'
+    }, {
+        id: 3,
+        name: 'admin',
+        email: 'Thong bao ba',
+        time: '2020-06-02 09:41:16'
+    }, {
+        name: 'admin',
+        email: 'Thong bao bon',
+        time: '2020-06-02 09:41:16'
+    }
 ];
 
-const columns = [
-  {
-    title: 'ID',
-    dataIndex: 'id',
-    key: 'id',
-  },
-  {
-    title: 'Time',
-    dataIndex: 'time',
-    key: 'time',
-  },
-  {
-    title: 'SimID',
-    dataIndex: 'simID',
-    key: 'simID',
-  },
-  {
-    title: 'Type',
-    dataIndex: 'type',
-    key: 'type',
-  },
-  {
-    title: 'Value',
-    dataIndex: 'value',
-    key: 'value',
-  },
-  {
-    title: 'Status',
-    dataIndex: 'status',
-    key: 'status',
-  },
-  {
-    title: 'CodeRequest',
-    dataIndex: 'codeRequest',
-    key: 'codeRequest',
-    width: 150
-  },
-];
 const historyData = [];
+
 function onBlur() {
-  console.log('blur');
+    console.log('blur');
 }
 
 function onFocus() {
-  console.log('focus');
+    console.log('focus');
 }
 
 
 @connect()
 class Home extends BaseComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 0,
-    };
-  }
-
-  state = {
-    loading: false,
-    hasMore: true,
-  };
-
-  componentDidMount() {
-    this.fetchData(res => {
-      this.setState({
-        data: res.results,
-      });
-    });
-  }
-
-  fetchData = callback => {
-    reqwest({
-      url: fakeDataUrl,
-      type: 'json',
-      method: 'get',
-      contentType: 'application/json',
-      success: res => {
-        callback(res);
-      },
-    });
-  };
-
-  handleInfiniteOnLoad = () => {
-    let {data} = this.state;
-    this.setState({
-      loading: true,
-    });
-    if (data.length > 3) {
-      message.warning('Infinite List loaded all');
-      this.setState({
-        hasMore: false,
-        loading: false,
-      });
-      return;
+    constructor(props) {
+        super(props);
+        this.state = {
+            current: 0,
+        };
     }
-    this.fetchData(res => {
-      data = data.concat(res.results);
-      this.setState({
-        data,
+
+    state = {
         loading: false,
-      });
-    });
-  };
-
-  next() {
-    const current = this.state.current + 1;
-    this.setState({current});
-  }
-
-  onChange(value) {
-    this.setState({roomId: value})
-  }
-
-  render() {
-    const {dashboard} = this.props;
-    const {current} = this.state;
-    const steps = [
-      {
-        title: 'Step 1',
-        description: intl.formatMessage(messages.chooseSerive)
-      }, {
-        title: 'Step 2',
-        description: intl.formatMessage(messages.phone)
-      }, {
-        title: 'Step 3',
-        description: intl.formatMessage(messages.getSimcode)
-      }, {
-        title: 'Step 4',
-        description: intl.formatMessage(messages.complete)
-      },
-    ];
-    const serviceData = [
-      {
-        id: '1',
-        serviceName: 'Dich vu mot'
-      },
-      {
-        id: '2',
-        serviceName: 'Dich vu hai'
-      },
-      {
-        id: '3',
-        serviceName: 'Dich vu ba'
-      },
-    ];
-    const formItemLayout = {
-      labelCol: {
-        md: {
-          span: 24,
-          offset: 0,
-        },
-        lg: {
-          span: 7,
-          offset: 2,
-        },
-      },
-      wrapperCol: {
-        md: {
-          span: 24,
-          offset: 0,
-        },
-        lg: {
-          span: 10,
-          offset: 0,
-        },},
+        hasMore: true,
     };
-    return (
-        <Layout className="full-layout page home-page">
-          <Content>
-            <DashboardWidget/>
-            <Panel title={intl.formatMessage(messages.notification)} className="panel-notify"
-                   style={{height: 300}}>
-              <InfiniteScroll
-                  initialLoad={false}
-                  pageStart={0}
-                  loadMore={this.handleInfiniteOnLoad}
-                  hasMore={!this.state.loading && this.state.hasMore}
-                  useWindow={false}
-              >
-                <List
-                    dataSource={data}
-                    renderItem={item => (
-                        <List.Item key={item.id}>
-                          <List.Item.Meta
-                              avatar={
-                                <Avatar src="../images/admin.png" size="large"/>
-                              }
-                              title={<text>{item.name}</text>}
-                              description={item.email}
-                          />
-                          <div className="notyfi-time">{item.time}</div>
-                        </List.Item>
-                    )}
-                >
-                  {this.state.loading && this.state.hasMore && (
-                      <div className="demo-loading-container">
-                        <Spin/>
-                      </div>
-                  )}
-                </List>
-              </InfiniteScroll>
-            </Panel>
-            <Panel title={intl.formatMessage(messages.getCode)} className="panel-service">
-              <Paragraph className="panel-subtitle">{intl.formatMessage(messages.registerService)}</Paragraph>
-              <Steps progressDot current={current}>
-                {steps.map(item => (
-                    <Step key={item.title} title={item.title} description={item.description}/>
-                ))}
-              </Steps>
-              <div className="steps-content">
-                {current === 0 && (
-                    <Form {...formItemLayout}>
-                      <Form.Item label={intl.formatMessage(messages.chooseSeriveAndNext)}>
-                        <Select
-                            showSearchs
-                            optionFilterProp="children"
-                            onChange={(e) => this.onChange(e)}
-                            onFocus={onFocus}
-                            onBlur={onBlur}
-                            filterOption={(input, option) =>
-                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                            }
+
+    componentDidMount() {
+        this.fetchData(res => {
+            this.setState({
+                data: res.results,
+            });
+        });
+    }
+
+    fetchData = callback => {
+        reqwest({
+            url: fakeDataUrl,
+            type: 'json',
+            method: 'get',
+            contentType: 'application/json',
+            success: res => {
+                callback(res);
+            },
+        });
+    };
+
+    handleInfiniteOnLoad = () => {
+        let {data} = this.state;
+        this.setState({
+            loading: true,
+        });
+        if (data.length > 3) {
+            message.warning('Infinite List loaded all');
+            this.setState({
+                hasMore: false,
+                loading: false,
+            });
+            return;
+        }
+        this.fetchData(res => {
+            data = data.concat(res.results);
+            this.setState({
+                data,
+                loading: false,
+            });
+        });
+    };
+
+    next() {
+        const current = this.state.current + 1;
+        this.setState({current});
+    }
+
+    onChange(value) {
+        this.setState({roomId: value})
+    }
+    render() {
+        const {dashboard} = this.props;
+        const {current} = this.state;
+        const steps = [
+            {
+                title: 'Step 1',
+                description: intl.formatMessage(messages.chooseSerive)
+            }, {
+                title: 'Step 2',
+                description: intl.formatMessage(messages.phone)
+            }, {
+                title: 'Step 3',
+                description: intl.formatMessage(messages.getSimcode)
+            }, {
+                title: 'Step 4',
+                description: intl.formatMessage(messages.complete)
+            },
+        ];
+        const serviceData = [
+            {
+                id: '1',
+                serviceName: 'Dich vu mot'
+            },
+            {
+                id: '2',
+                serviceName: 'Dich vu hai'
+            },
+            {
+                id: '3',
+                serviceName: 'Dich vu ba'
+            },
+        ];
+        const formItemLayout = {
+            labelCol: {
+                md: {
+                    span: 24,
+                    offset: 0,
+                },
+                lg: {
+                    span: 7,
+                    offset: 2,
+                },
+            },
+            wrapperCol: {
+                md: {
+                    span: 24,
+                    offset: 0,
+                },
+                lg: {
+                    span: 10,
+                    offset: 0,
+                },
+            },
+        };
+        const columns = [
+            {
+                title: 'ID',
+                dataIndex: 'id',
+                key: 'id',
+            },
+            {
+                title: intl.formatMessage(messages.time),
+                dataIndex: 'time',
+                key: 'time',
+            },
+            {
+                title: 'SimID',
+                dataIndex: 'simID',
+                key: 'simID',
+            },
+            {
+                title: intl.formatMessage(messages.type),
+                dataIndex: 'type',
+                key: 'type',
+            },
+            {
+                title: intl.formatMessage(messages.value),
+                dataIndex: 'value',
+                key: 'value',
+            },
+            {
+                title: intl.formatMessage(messages.status),
+                dataIndex: 'status',
+                key: 'status',
+            },
+            {
+                title: intl.formatMessage(messages.codeRequest),
+                dataIndex: 'codeRequest',
+                key: 'codeRequest',
+                width: 150
+            },
+        ];
+
+        return (
+            <Layout className="full-layout page home-page">
+                <Content>
+                    <DashboardWidget/>
+                    <Panel title={intl.formatMessage(messages.notification)} className="panel-notify"
+                           style={{height: 300}}>
+                        <InfiniteScroll
+                            initialLoad={false}
+                            pageStart={0}
+                            loadMore={this.handleInfiniteOnLoad}
+                            hasMore={!this.state.loading && this.state.hasMore}
+                            useWindow={false}
                         >
-                          {serviceData.map(item => (
-                              <Select.Option key={item.id} value={item.id}
-                                             className="next-btn">{item.serviceName}</Select.Option>
-                          ))}
+                            <List
+                                dataSource={data}
+                                renderItem={item => (
+                                    <List.Item key={item.id}>
+                                        <List.Item.Meta
+                                            avatar={
+                                                <Avatar src="../images/admin.png" size="large"/>
+                                            }
+                                            title={<text>{item.name}</text>}
+                                            description={item.email}
+                                        />
+                                        <div className="notyfi-time">{item.time}</div>
+                                    </List.Item>
+                                )}
+                            >
+                                {this.state.loading && this.state.hasMore && (
+                                    <div className="demo-loading-container">
+                                        <Spin/>
+                                    </div>
+                                )}
+                            </List>
+                        </InfiniteScroll>
+                    </Panel>
+                    <Panel title={intl.formatMessage(messages.getCode)} className="panel-service">
+                        <Paragraph className="panel-subtitle">{intl.formatMessage(messages.registerService)}</Paragraph>
+                        <Steps progressDot current={current}>
+                            {steps.map(item => (
+                                <Step key={item.title} title={item.title} description={item.description}/>
+                            ))}
+                        </Steps>
+                        <div className="steps-content">
+                            {current === 0 && (
+                                <Form {...formItemLayout}>
+                                    <Form.Item label={intl.formatMessage(messages.chooseSeriveAndNext)}>
+                                        <Select
+                                            showSearchs
+                                            optionFilterProp="children"
+                                            onChange={(e) => this.onChange(e)}
+                                            onFocus={onFocus}
+                                            onBlur={onBlur}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {serviceData.map(item => (
+                                                <Select.Option key={item.id} value={item.id}
+                                                               className="next-btn">{item.serviceName}</Select.Option>
+                                            ))}
 
 
-                        </Select>
-                      </Form.Item>
-                      <Form.Item
-                          wrapperCol={{
-                            sm: {span: 24, offset: 0},
-                          }}
-                          className="div-btn"
-                      >
-                        <Button disabled className="disable-btn">Finish</Button>
-                        <Button onClick={() => this.next()} className="next-btn">Next</Button>
-                      </Form.Item>
-                    </Form>
-                )}
-                {current === 1 && (
-                    <Form {...formItemLayout}>
-                      <Form.Item label={intl.formatMessage(messages.phoneAndNext)}>
-                        <Input/>
-                      </Form.Item>
-                      <Form.Item
-                          wrapperCol={{
-                            sm: {span: 24, offset: 0},
-                          }}
-                          className="div-btn"
-                      >
-                        <Button disabled className="disable-btn">Finish</Button>
-                        <Button onClick={() => this.next()} className="next-btn">Next</Button>
-                      </Form.Item>
-                    </Form>
-                )}
-                {current === 2 && (
-                    <Form {...formItemLayout}>
-                      <Form.Item label={intl.formatMessage(messages.getCodeHere)}>
-                        <Input value="123456789"/>
-                      </Form.Item>
-                      <Form.Item
-                          wrapperCol={{
-                            sm: {span: 24, offset: 0},
-                          }}
-                          className="div-btn"
-                      >
-                        <Button disabled className="disable-btn">Finish</Button>
-                        <Button onClick={() => this.next()} className="next-btn">Next</Button>
-                      </Form.Item>
-                    </Form>
-                )}
-                {current === 3 && (
-                    <div>
-                      <div className="div-text-complete">
-                        <Paragraph>{intl.formatMessage(messages.getCodeComplete)}</Paragraph>
-                      </div>
-                      <div className="div-btn">
-                        <Button className="next-btn">Finish</Button>
-                        <Button disabled onClick={() => this.next()}
-                                className="disable-btn">Next</Button>
-                      </div>
-                    </div>
-                )}
-              </div>
-            </Panel>
-            <Panel title={intl.formatMessage(messages.history)} address="abc@gmail.com" className="panel-history">
-              <Paragraph className="panel-subtitle">{intl.formatMessage(messages.getCodeHistory)}</Paragraph>
-            <Table columns={columns} dataSource={historyData} size="middle" bordered />
-            </Panel>
-          </Content>
-        </Layout>
-    );
-  }
+                                        </Select>
+                                    </Form.Item>
+                                    <Form.Item
+                                        wrapperCol={{
+                                            sm: {span: 24, offset: 0},
+                                        }}
+                                        className="div-btn"
+                                    >
+                                        <Button disabled className="disable-btn">Finish</Button>
+                                        <Button onClick={() => this.next()} className="next-btn">Next</Button>
+                                    </Form.Item>
+                                </Form>
+                            )}
+                            {current === 1 && (
+                                <Form {...formItemLayout}>
+                                    <Form.Item label={intl.formatMessage(messages.phoneAndNext)}>
+                                        <Input/>
+                                    </Form.Item>
+                                    <Form.Item
+                                        wrapperCol={{
+                                            sm: {span: 24, offset: 0},
+                                        }}
+                                        className="div-btn"
+                                    >
+                                        <Button disabled className="disable-btn">Finish</Button>
+                                        <Button onClick={() => this.next()} className="next-btn">Next</Button>
+                                    </Form.Item>
+                                </Form>
+                            )}
+                            {current === 2 && (
+                                <Form {...formItemLayout}>
+                                    <Form.Item label={intl.formatMessage(messages.getCodeHere)}>
+                                        <Input value="123456789"/>
+                                    </Form.Item>
+                                    <Form.Item
+                                        wrapperCol={{
+                                            sm: {span: 24, offset: 0},
+                                        }}
+                                        className="div-btn"
+                                    >
+                                        <Button disabled className="disable-btn">Finish</Button>
+                                        <Button onClick={() => this.next()} className="next-btn">Next</Button>
+                                    </Form.Item>
+                                </Form>
+                            )}
+                            {current === 3 && (
+                                <div>
+                                    <div className="div-text-complete">
+                                        <Paragraph>{intl.formatMessage(messages.getCodeComplete)}</Paragraph>
+                                    </div>
+                                    <div className="div-btn">
+                                        <Button className="next-btn">Finish</Button>
+                                        <Button disabled onClick={() => this.next()}
+                                                className="disable-btn">Next</Button>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </Panel>
+                    <Panel title={intl.formatMessage(messages.history)} address="User abc@gmail.com"
+                           className="panel-history">
+                        <Paragraph className="panel-subtitle">{intl.formatMessage(messages.getCodeHistory)}</Paragraph>
+                        <Table columns={columns} dataSource={historyData} size="small" bordered pagination={{ pageSize: 2 }} />
+                    </Panel>
+                </Content>
+            </Layout>
+        );
+    }
 }
+
 export default (Form.create()(Home));
 

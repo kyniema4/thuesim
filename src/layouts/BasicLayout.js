@@ -12,11 +12,12 @@ import NavBar from '../components/NavBar';
 import { LeftSideBar, RightSideBar } from '../components/SideBar';
 import TopBar from '../components/TopBar';
 import SkinToolbox from '../components/SkinToolbox';
+import FooterComponent from '../components/Footer';
 import { enquireIsMobile } from '../utils/enquireScreen';
 import './styles/basic.less';
 import TabsLayout from './TabsLayout';
 
-const { Content, Header } = Layout;
+const { Content, Header, Footer } = Layout;
 
 /**
  * Basic department
@@ -255,8 +256,13 @@ class BasicLayout extends PureComponent {
                   />
                 </Header>
                 <Content className="router-page">
-                  <Switch>{childRoutes}</Switch>
+                  <Switch>
+                    {childRoutes}
+                  </Switch>
                 </Content>
+                <Footer>
+                  <FooterComponent/>
+                </Footer>
               </Layout>
             )}
           </Content>

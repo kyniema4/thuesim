@@ -1,4 +1,36 @@
 // Page style
 @import '../../../../assets/styles/variables.less';
+
 .addbalancenumber-page {
+  .antui-panel {
+    .antui-panel-body .panel-content {
+      padding: 10px 25px 25px 25px;
+    }
+  }
+
+  .add-btn {
+    height: 30px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    color: @white;
+    background-color: @blue500;
+    border-color: @blue500;
+    text-transform: capitalize;
+  }
+
+  .ant-form {
+    .ant-form-item {
+      &-label > label {
+        color: @grey-green450;
+        font-size: 14px;
+        font-weight: 400 !important;
+      }
+    }
+
+    .ant-input:focus,
+    .ant-input:hover {
+      border-color: @blue500;
+    }
+  }
 }

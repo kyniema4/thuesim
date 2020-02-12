@@ -58,4 +58,25 @@ export default ({
     id: `${scope}.getCodeHistory`,
     defaultMessage: 'Getcode code history',
   },
+  time: {
+    id: `${scope}.time`,
+    defaultMessage: 'Time',
+  },
+  type: {
+    id: `${scope}.type`,
+    defaultMessage: 'Type',
+  },
+  value: {
+    id: `${scope}.value`,
+    defaultMessage: 'Value',
+  },
+  status: {
+    id: `${scope}.status`,
+    defaultMessage: 'Status',
+  },
+  codeRequest: {
+    id: `${scope}.codeRequest`,
+    defaultMessage: 'CodeRequest',
+  },
+
 });

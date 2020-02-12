@@ -21,6 +21,7 @@
       .ant-layout-sider > .ant-layout-sider-children {
         overflow-x: hidden;
         overflow-y: auto;
+
       }
     }
     // Fixed head only
@@ -38,7 +39,9 @@
       }
 
       .ant-layout.ant-layout-has-sider > .ant-layout,
-      .ant-layout.ant-layout-has-sider > .ant-layout-content { overflow-x: visible; }
+      .ant-layout.ant-layout-has-sider > .ant-layout-content {
+        overflow-x: visible;
+      }
     }
     // Only fix the breadcrumbs, you must first fix the head before it can take effect.
     &.fixed-breadcrumbs {
@@ -48,7 +51,12 @@
       }
 
       > .ant-layout > .ant-layout-content > .ant-layout {
-        > .ant-layout-content { overflow: auto; }
+        > .ant-layout-content {
+          overflow: auto;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
 
         > .ant-layout-header {
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
@@ -68,3 +76,4 @@
     .router-page > .ant-layout { min-height: ~'calc(100vh - 110px)'; }
   }
 }
+
