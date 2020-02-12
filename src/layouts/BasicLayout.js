@@ -274,7 +274,7 @@ class BasicLayout extends PureComponent {
             />
           )}
         </Layout>
-        <SkinToolbox onChangeTheme={this.onChangeTheme} theme={theme} />
+        {/*<SkinToolbox onChangeTheme={this.onChangeTheme} theme={theme} />*/}
       </Layout>
     );
   }

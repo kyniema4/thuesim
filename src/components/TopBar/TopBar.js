@@ -134,9 +134,9 @@ class TopBar extends Component {
                 <Breadcrumb.Item className="icon">
                   <Icon type="home" />
                 </Breadcrumb.Item>
-                <Breadcrumb.Item>
-                  <Link to="/">{intl.formatMessage(messages.HomePage)}</Link>
-                </Breadcrumb.Item>
+                {/*<Breadcrumb.Item>*/}
+                {/*  <Link to="/">{intl.formatMessage(messages.HomePage)}</Link>*/}
+                {/*</Breadcrumb.Item>*/}
                 {currentRoute.map((item, index) => (
                   <Breadcrumb.Item key={index}>
                     {index === currentRoute.length - 1 ? (

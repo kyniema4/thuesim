@@ -1,4 +1,143 @@
 // Page style
 @import '../../../../assets/styles/variables.less';
 .autoapi-page {
+  .panel-history-banking {
+    .ant-timeline {
+      &-item-head-custom {
+        width: 40px;
+        height: 40px;
+        background-color: @yellow500;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .ant-typography {
+          font-size: 16px;
+          padding: 0;
+          color: @white;
+          font-weight: 500!important;
+        }
+      }
+
+      &-item-content {
+        color: @grey500;
+        margin: 0 0 0 40px;
+      }
+
+      &-item-head-custom { left: 10px;}
+
+      &-item-tail { left: 9px;}
+
+      .timeline-title {
+        color: @dark800 !important;
+        font-size: 14px;
+        font-weight: 400 !important;
+        margin-bottom: 0;
+      }
+      .timeline-address {
+        color: @grey-green450 !important;
+        font-size: 12px;
+      }
+
+      .badge {
+        color: @white;
+        font-size: 12px;
+        font-weight: 400!important;
+        padding: 0 4px;
+        border-radius: 4px;
+        margin-left: 5px;
+      }
+      .ok-text {
+        background-color: @success-color;
+      }
+      .error-text {
+        background-color: @red-6;
+      }
+      .other-text {
+        background-color: @blue500;
+      }
+    }
+
+    .panel-explain {
+      .antui-panel-header-controls {
+        display: none;
+      }
+
+      .ant-tabs {
+        color: @dark800;
+
+        .ant-tabs-left-bar {
+          border-right: unset;
+
+          .ant-tabs-tab {
+            text-align: left;
+          }
+        }
+
+        .ant-tabs-left-bar .ant-tabs-tab,
+        .ant-tabs-right-bar .ant-tabs-tab {
+          display: block;
+          float: none;
+          margin: 0;
+          padding: 10px 40px 10px 10px;
+        }
+
+        &-nav .ant-tabs-tab {
+          font-weight: 500 !important;
+
+          &:hover {
+            color: @grey500;
+          }
+
+          &-active {
+            background-color: @blue500;
+            color: @white;
+            font-weight: 500 !important;
+            border-radius: 4px;
+
+            &:hover {
+              color: @white !important;
+            }
+          }
+        }
+
+        &-ink-bar {
+          background-color: transparent;
+        }
+
+        &-left-content {
+          padding-left: 35px;
+          border-left: unset;
+        }
+      }
+
+      .tab-content-title {
+        color: @dark800 !important;
+        font-size: 14px;
+        font-weight: 400 !important;
+      }
+
+      .tab-content-content {
+        color: @grey500 !important;
+        font-size: 14px;
+
+        .hightlight-text {
+          padding: 4px;
+          border-radius: 4px;
+          font-weight: 400 !important;
+        }
+
+        .blue {
+          background-color: @blue100;
+          color: @blue500;
+        }
+
+        .link {
+          background-color: @yellow100;
+          color: @yellow800;
+        }
+      }
+    }
+  }
 }

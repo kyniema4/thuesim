@@ -13,7 +13,7 @@ export default {
   /**
    * HTML title template
    */
-  htmlTitle: 'DBAdmin - {title}',
+  htmlTitle: 'SimCode! - {title}',
 
   /**
    * system notification
