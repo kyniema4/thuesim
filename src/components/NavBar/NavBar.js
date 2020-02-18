@@ -184,21 +184,21 @@ class NavBar extends PureComponent {
 const UserDropDown = () => (
   <ul className="dropdown-menu list-group dropdown-persist">
     <li className="list-group-item">
-      <a className="animated animated-short fadeInUp">
+      <Link to={routerLinks['Profile']} className="animated animated-short fadeInUp">
         <Icon type="mail" /> {intl.formatMessage(messages.information)}
         <Badge count={5} className="label" />
-      </a>
+      </Link>
     </li>
     <li className="list-group-item">
-      <a className="animated animated-short fadeInUp">
+      <Link to={routerLinks['Profile']} className="animated animated-short fadeInUp">
         <Icon type="users" /> {intl.formatMessage(messages.friend)}
         <Badge count={6} className="label" />
-      </a>
+      </Link>
     </li>
     <li className="list-group-item">
-      <a className="animated animated-short fadeInUp">
+      <Link to={routerLinks['Profile']} className="animated animated-short fadeInUp">
         <Icon type="gear" /> {intl.formatMessage(messages.acountSetting)}
-      </a>
+      </Link>
     </li>
     <li className="list-group-item">
       <a className="animated animated-short fadeInUp">

@@ -295,7 +295,14 @@
 
   "routes.autoapi.blankPage": "Blank page",
   "routes.history.blankPage": "Blank page",
-  "components.footer.test": "Footer"
+  "components.footer.test": "Footer",
+
+  "routes.profile.profileInfo": "Profile Information",
+  "routes.profile.welcomeBack": "Welcome back!",
+  "routes.profile.tutorialEdit": "You can view and edit your information right here.",
+  "routes.profile.yourName": "Your Name",
+  "routes.profile.save": "Save",
+  "routes.profile.password": "Password"
 }
 
 

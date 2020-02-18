@@ -296,5 +296,12 @@
 
   "routes.autoapi.blankPage": "Trang trống",
   "routes.history.blankPage": "Trang trống",
-  "components.footer.test": "Footer"
+  "components.footer.test": "Footer",
+
+  "routes.profile.profileInfo": "Thông tin cá nhân",
+  "routes.profile.welcomeBack": "Chào mừng trở lại!",
+  "routes.profile.tutorialEdit": "Bạn có thể xem và chỉnh sửa thông tin của bạn ngay tại đây.",
+  "routes.profile.yourName": "Tên của bạn",
+  "routes.profile.save": "Lưu",
+  "routes.profile.password": "Mật khẩu"
 }

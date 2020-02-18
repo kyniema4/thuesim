@@ -33,5 +33,6 @@ export const routerLinks = {
   Home: '/administrator/home',
   AddBalanceNumber: '/administrator/addbalancenumber',
   AutoApi: '/administrator/autoapi',
-  History: '/administrator/history'
+  History: '/administrator/history',
+  Profile: '/administrator/profile'
 }

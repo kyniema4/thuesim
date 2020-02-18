@@ -36,6 +36,7 @@ import AddBalanceNumber from './Home-Directory/AddBalanceNumber';
 
 import AutoApi from './Home-Directory/AutoApi';
 import History from './Home-Directory/History';
+import Profile from './Profile';
 
 const routesConfig = app => [
   {
@@ -64,6 +65,7 @@ const routesConfig = app => [
       Dashboard(app),
       Blank(app),
       // 💬 generate admin to here
+      Profile(app),
       History(app),
       AutoApi(app),
       AddBalanceNumber(app),
