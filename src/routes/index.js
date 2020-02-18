@@ -42,7 +42,7 @@ const routesConfig = app => [
     path: '/administrator/',
     title: 'System center',
     component: BasicLayout,
-    indexRoute: routerLinks['Dashboard'],
+    indexRoute: routerLinks['Home'],
     childRoutes: [
       Icon(),
       Mask(),

@@ -28,7 +28,7 @@ export default {
       const { status, message, data } = yield call(login, payload);
       if (status) {
         $$.setStore('user', data);
-        yield put(routerRedux.replace(routerLinks['Dashboard']));
+        yield put(routerRedux.replace(routerLinks['Home']));
       } else {
         yield put({
           type: 'loginError',
