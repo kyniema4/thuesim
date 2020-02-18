@@ -17,8 +17,8 @@ export default class extends BaseComponent {
         return (
             <Layout className="full-layout page dashboard-page">
                 <Content>
-                    <Panel title="THÔNG BÁO">
-                        <p>QUẢN LÝ ĐÓNG GÓP CODE CHUYỂN LINK</p>
+                    <Panel title="Thông báo">
+                        <p className="panel-subtitle">QUẢN LÝ ĐÓNG GÓP CODE CHUYỂN LINK</p>
                     </Panel>
                 </Content>
             </Layout>

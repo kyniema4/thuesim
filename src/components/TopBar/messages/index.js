@@ -15,7 +15,7 @@ export default {
   },
   HomePage: {
     id: `${scope}.HomePage`,
-    defaultMessage: 'Home Page',
+    defaultMessage: 'Home',
   },
 
 };

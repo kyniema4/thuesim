@@ -206,33 +206,34 @@ class LeftSideBar extends PureComponent {
         <div className="sidebar-left-content">
           <header className="sidebar-header">
             <div className="userlogged clearfix">
-              <Icon type="woman" />
+              <Icon type="user" />
               <div className="user-details">
-                <span>{user.name}</span>
-                <div className="dropdown">
-                  <Select
-                    size="small"
-                    defaultValue="online"
-                    dropdownClassName="sidebar-header-dropdown"
-                  >
-                    <Option value="online">
-                      <span className="user online" />
-                      {intl.formatMessage(messages.optionOnline)}
-                    </Option>
-                    <Option value="busy">
-                      <span className="user busy" />
-                      {intl.formatMessage(messages.optionBusy)}
-                    </Option>
-                    <Option value="invisible">
-                      <span className="user invisible" />
-                      {intl.formatMessage(messages.optionInvisible)}
-                    </Option>
-                    <Option value="offline">
-                      <span className="user offline" />
-                      {intl.formatMessage(messages.optionOffline)}
-                    </Option>
-                  </Select>
-                </div>
+                <p>Hello,</p>
+                <span>Samatha</span>
+                {/*<div className="dropdown">*/}
+                {/*  <Select*/}
+                {/*    size="small"*/}
+                {/*    defaultValue="online"*/}
+                {/*    dropdownClassName="sidebar-header-dropdown"*/}
+                {/*  >*/}
+                {/*    <Option value="online">*/}
+                {/*      <span className="user online" />*/}
+                {/*      {intl.formatMessage(messages.optionOnline)}*/}
+                {/*    </Option>*/}
+                {/*    <Option value="busy">*/}
+                {/*      <span className="user busy" />*/}
+                {/*      {intl.formatMessage(messages.optionBusy)}*/}
+                {/*    </Option>*/}
+                {/*    <Option value="invisible">*/}
+                {/*      <span className="user invisible" />*/}
+                {/*      {intl.formatMessage(messages.optionInvisible)}*/}
+                {/*    </Option>*/}
+                {/*    <Option value="offline">*/}
+                {/*      <span className="user offline" />*/}
+                {/*      {intl.formatMessage(messages.optionOffline)}*/}
+                {/*    </Option>*/}
+                {/*  </Select>*/}
+                {/*</div>*/}
               </div>
             </div>
           </header>

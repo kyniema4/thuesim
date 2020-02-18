@@ -69,9 +69,13 @@
 
       .user-details {
         float: left;
-        padding-left: 5px;
+        padding: 10px 0 0 5px;
         text-align: left;
 
+        > p {
+          font-size: 14px;
+          margin-bottom: 0;
+        }
         > span {
           display: block;
           font-size: 18px;
@@ -89,7 +93,7 @@
   &.darkgrey,
   &.dark {
     .sidebar-header {
-      .userlogged .user-details > span { color: #e2e2e2; }
+      .userlogged .user-details > p,span { color: #e2e2e2; }
 
       .ant-select-selection {
         background-color: rgba(0, 0, 0, 0.2);

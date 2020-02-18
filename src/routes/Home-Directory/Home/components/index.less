@@ -1,11 +1,7 @@
 // Page style
 @import '../../../../assets/styles/variables.less';
 .home-page {
-  .panel-subtitle {
-    color: @grey-green400;
-    font-size: 14px;
-    font-weight: 400!important;
-  }
+
 
   .panel-notify {
   .antui-panel {
@@ -160,15 +156,14 @@
   }
 
   .panel-history {
+    .antui-panel-body .panel-content {
+      padding: 10px 25px 25px 25px;
+    }
     .ant-table-thead > tr > th {
       color: @dark800;
       font-size: 14px;
       font-weight: 500!important;
-    }
-    .ant-table {
-      color: @dark800;
-      font-size: 14px;
-      font-weight: 400!important;
+      background-color: #fafafa !important;
     }
   }
 }

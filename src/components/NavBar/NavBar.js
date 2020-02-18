@@ -90,8 +90,7 @@ class NavBar extends PureComponent {
         <div className="navbar-branding">
           <Link className="navbar-brand" to="/">
             <img src="/images/logo1.png" alt="logo" />
-            <b>LANIF</b>
-            Admin
+            <b>SimCode!</b>
           </Link>
           <span role="presentation" className="toggle-sidemenu-l" onClick={onCollapseLeftSide}>
             <Icon type="lines" />
@@ -105,32 +104,32 @@ class NavBar extends PureComponent {
               </a>
             </li>
           )}
-          {isMobile ? (
-            <li role="presentation" className="mini-search" onClick={this.onOpenSearchBox}>
-              <a>
-                <Icon type="search" antd />
-              </a>
-            </li>
-          ) : (
-            <li role="presentation" onClick={this.toggleFullScreen}>
-              <a className="request-fullscreen">
-                <Icon type="screen-full" />
-              </a>
-            </li>
-          )}
+          {/*{isMobile ? (*/}
+          {/*  <li role="presentation" className="mini-search" onClick={this.onOpenSearchBox}>*/}
+          {/*    <a>*/}
+          {/*      <Icon type="search" antd />*/}
+          {/*    </a>*/}
+          {/*  </li>*/}
+          {/*) : (*/}
+          {/*  <li role="presentation" onClick={this.toggleFullScreen}>*/}
+          {/*    <a className="request-fullscreen">*/}
+          {/*      <Icon type="screen-full" />*/}
+          {/*    </a>*/}
+          {/*  </li>*/}
+          {/*)}*/}
         </ul>
-        {isMobile ? null : (
-          <form className="navbar-form navbar-search clearfix">
-            <div className="form-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder = {intl.formatMessage(messages.fullSearch)}
-                onClick={this.onOpenSearchBox}
-              />
-            </div>
-          </form>
-        )}
+        {/*{isMobile ? null : (*/}
+          {/*<form className="navbar-form navbar-search clearfix">*/}
+          {/*  <div className="form-group">*/}
+          {/*    <input*/}
+          {/*      type="text"*/}
+          {/*      className="form-control"*/}
+          {/*      placeholder = {intl.formatMessage(messages.fullSearch)}*/}
+          {/*      onClick={this.onOpenSearchBox}*/}
+          {/*    />*/}
+          {/*  </div>*/}
+          {/*</form>*/}
+        {/*)}*/}
         <ul className="nav navbar-nav navbar-right clearfix">
           <li className="dropdown icon-svg">
             <Popover

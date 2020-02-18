@@ -57,8 +57,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: 500 !important; }
 
     .ant-menu-item-selected > a,
     .ant-menu-submenu-open span {
-      .anticon {color: @white;}
-      &:hover .anticon { color: @white; }
+      .anticon {color: @white !important;}
+      &:hover .anticon { color:  @grey-green300 !important; }
     }
   }
 
@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 500 !important; }
   &:focus,
   &:hover,
   &-active {
-    background-color: @primary-color;
+    background-color: @blue500;
 
     a { color: @white; }
   }
@@ -189,7 +189,7 @@ code {
 
   .ant-layout-footer {
     background-color: #fff;
-    padding: 10px;
+    padding: 0;
     text-align: center;
     width: 100%;
   }
@@ -274,4 +274,91 @@ code {
 
 .fr {
   float: right;
+}
+
+.ant-empty-normal {
+  margin: 15px 0;
+}
+.ant-table-small > .ant-table-content > .ant-table-body {
+  margin: 0;
+}
+
+.div-history-topup {
+  padding: 15px 0 0 0;
+  background-color: @white;
+  margin-bottom: 30px;
+  border-radius: 4px;
+
+  .history-topup-text {
+    color: @grey500;
+    font-size: 16px;
+    font-weight: 500 !important;
+    padding: 0 20px 15px 20px;
+    border-bottom: 1px solid #ebedf2;
+  }
+
+  .panel-history-banking {
+    .antui-panel-header-title {
+      font-size: 14px;
+    }
+
+    .ant-table {
+      color: @dark800;
+      font-size: 14px;
+      font-weight: 400 !important;
+
+      .ant-table-thead > tr > th {
+        background-color: #fafafa !important;
+      }
+    }
+
+    .showing-text {
+      color: @grey300;
+      font-size: 13px;
+      padding-top: 15px;
+    }
+
+    .div-tool-history {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .btn {
+        height: 25px;
+        font-size: 12px;
+        border-radius: 4px;
+        margin-right: 0.5rem;
+        text-transform: capitalize;
+        background-color: transparent;
+      }
+      .copy-btn {
+        border-color: @blue500;
+        color: @blue500;
+      }
+      .csv-btn {
+        border-color: @green500;
+        color: @green500;
+      }
+      .print-btn {
+        border-color: @yellow500;
+        color: @yellow500;
+      }
+    }
+
+    .ant-input {
+      height: 25px;
+      font-size: 12px;
+
+      &:focus,
+      &:hover {
+        border-color: @blue500;
+      }
+    }
+  }
+
+  .p20 {
+    padding: 10px 25px 25px 25px;
+  }
 }
