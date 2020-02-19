@@ -9,6 +9,7 @@ import { routerLinks } from "../../constant";
 import messages from '../messages';
 import { appLocales } from '../../../i18n';
 import './index.less';
+import $$ from 'cmn-utils';
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -21,6 +22,7 @@ const { Option } = Select;
   loading: loading.models.login
 }))
 class Login extends Component {
+
   handleSubmit = e => {
     const { form, dispatch } = this.props;
     e.preventDefault();
@@ -33,6 +35,15 @@ class Login extends Component {
       }
     });
   };
+  componentWillMount(){
+    // var abc = $$.setStore('username')
+    // if(abc != null && abc !='' || abc != undefined){
+    //   console.log(1)
+    // }else{
+    //   console.log(2)
+    // }
+    console.log($$.setStore('username'))
+  }
 
   changeLanguage = (value) => {
     const {dispatch} = this.props;
@@ -61,8 +72,7 @@ class Login extends Component {
                         <Title level={4}>Sign In To Admin Panel</Title>
                       </div>
                       <FormItem>
-                        {getFieldDecorator('userName', {
-                          initialValue: 'admin',
+                        {getFieldDecorator('username', {
                           rules: [{ required: true, message: intl.formatMessage(messages.usernameMessage)}]
                         })(
                           <Input
@@ -73,7 +83,6 @@ class Login extends Component {
                       </FormItem>
                       <FormItem>
                         {getFieldDecorator('password', {
-                          initialValue: 'admin',
                           rules: [{ required: true, message: intl.formatMessage(messages.passwordMessage)}]
                         })(
                           <Input
@@ -86,7 +95,7 @@ class Login extends Component {
                       <FormItem>
                         {getFieldDecorator('remember', {
                           valuePropName: 'checked',
-                          initialValue: true
+                          // initialValue: true
                         })(<Checkbox>
                           {intl.formatMessage(messages.remember)}
                         </Checkbox>)}

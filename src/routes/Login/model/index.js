@@ -1,9 +1,8 @@
-import { routerRedux } from 'dva/router';
+import { routerRedux} from 'dva/router';
 import $$ from 'cmn-utils';
-
+import {Redirect} from "react-router-dom"
 import { routerLinks } from "../../constant";
 import { login } from '../service';
-
 export default {
   namespace: 'login',
 
@@ -17,7 +16,23 @@ export default {
     setup({ history }) {
       return history.listen(({ pathname }) => {
         if (pathname.indexOf(routerLinks['Login']) !== -1) {
-          $$.removeStore('user');
+          if(pathname.indexOf('login') !== -1 )
+          {
+            $$.removeStore('user');
+            $$.removeStore('remember');
+          }
+          else
+          {
+            if($$.getStore('remember') == true)
+            {
+              history.push('/administrator/dashboard')
+            }
+            else
+            {
+              $$.removeStore('user');
+              $$.removeStore('remember');
+            }
+          }
         }
       });
     }
@@ -25,11 +40,16 @@ export default {
 
   effects: {
     *login({ payload }, { call, put }) {
-      const { status, message, data } = yield call(login, payload);
-      if (status) {
-        $$.setStore('user', data);
+      const { success, message, data } = yield call(login, payload);
+      if (success ===true) {
+        if(payload.remember == true)
+        {
+          $$.setStore('remember', payload.remember)
+        }
+        $$.setStore('user', data.token);
         yield put(routerRedux.replace(routerLinks['Dashboard']));
-      } else {
+      }
+      else {
         yield put({
           type: 'loginError',
           payload: { message }

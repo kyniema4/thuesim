@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'dva';
 import {Button, Layout, Tabs, Typography, Timeline} from 'antd';
 import intl from 'react-intl-universal';
+import $$ from 'cmn-utils'
 
 import BaseComponent from '../../../../components/BaseComponent';
 import DashboardWidget from '../../../../components/DashboardWidget';
@@ -9,6 +10,7 @@ import messages from '../messages';
 import './index.less';
 import Panel from "../../../../components/Panel";
 import messagesAdd from "../../AddBalanceNumber/messages";
+import url from '../../../../base_url'
 
 const {Content} = Layout;
 const {Paragraph, Text} = Typography;
@@ -16,7 +18,30 @@ const {TabPane} = Tabs;
 
 @connect()
 export default class extends BaseComponent {
+    state = {
+        token : $$.getStore('user'),
+        dataEmail:''
+    }
+
+    componentWillMount(){
+        fetch(url.url+"/users/get_my_profile",{
+            method: "POST",
+            headers:{'Authorization':this.state.token,"Content-Type":"application/json"}
+        }).then(res =>{
+        return res.json()
+        }).then(res =>{
+            this.setState({
+                dataEmail : res.data.email
+            })
+        }).catch(err =>{
+        return err
+        })
+    }
+
+
     render() {
+        const { dataEmail } = this.state;
+
         return (
             <Layout className="full-layout page autoapi-page">
                 <Content>
@@ -53,8 +78,8 @@ export default class extends BaseComponent {
                             <Tabs tabPosition={"left"}>
                                 <TabPane tab="Token" key="1">
                                     <Paragraph className="tab-content-title">Token</Paragraph>
-                                    <Paragraph className="tab-content-content">Token của tài khoản abc@gmail.com <Text
-                                        className="hightlight-text blue">dfksfrtrty45gdfg4fd4hf</Text></Paragraph>
+                                    <Paragraph className="tab-content-content">Token của tài khoản {dataEmail} <Text
+                                        className="hightlight-text blue">{this.state.token}</Text></Paragraph>
                                 </TabPane>
                                 <TabPane tab="Thông số" key="2">
                                     <Paragraph className="tab-content-title">Thông số</Paragraph>
