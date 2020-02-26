@@ -302,7 +302,11 @@
   "routes.profile.tutorialEdit": "You can view and edit your information right here.",
   "routes.profile.yourName": "Your Name",
   "routes.profile.save": "Save",
-  "routes.profile.password": "Password"
+  "routes.profile.password": "Password",
+  "routes.profile.confirmPassword": "Confirm password",
+  "routes.profile.currentPassword": "Current Password",
+  "routes.profile.newPassword": "New Password",
+  "routes.profile.changePassword": "Change The Password"
 }
 
 

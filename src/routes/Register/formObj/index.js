@@ -40,37 +40,37 @@ export default () => [
       ]
     }
   },
-  {
-    title: intl.formatMessage(messages.firstName),
-    name: 'first_name',
-    formItem: {
-      rules: [
-        {
-          required: true,
-          message: intl.formatMessage(messages.messageFirstName),
-        }
-      ]
-    }
-  },
-  {
-    title: intl.formatMessage(messages.lastName),
-    name: 'last_name',
-    formItem: {
-      rules: [
-        {
-          required: true,
-          message: intl.formatMessage(messages.messageLastName),
-        }
-      ]
-    }
-  },
+  // {
+  //   title: intl.formatMessage(messages.firstName),
+  //   name: 'first_name',
+  //   formItem: {
+  //     rules: [
+  //       {
+  //         required: true,
+  //         message: intl.formatMessage(messages.messageFirstName),
+  //       }
+  //     ]
+  //   }
+  // },
+  // {
+  //   title: intl.formatMessage(messages.lastName),
+  //   name: 'last_name',
+  //   formItem: {
+  //     rules: [
+  //       {
+  //         required: true,
+  //         message: intl.formatMessage(messages.messageLastName),
+  //       }
+  //     ]
+  //   }
+  // },
   {
     title: intl.formatMessage(messages.gender),
     name: 'gender',
     dict: [
-      { code: '1', codeName: 'Type one' },
-      { code: '2', codeName: 'Type two' },
-      { code: '3', codeName: 'Type three' }
+      { code: '1', codeName: 'Male' },
+      { code: '2', codeName: 'Female' },
+      { code: '3', codeName: 'Other' }
     ],
     formItem: {
       type: 'select',
@@ -79,16 +79,16 @@ export default () => [
       ]
     }
   },
-  {
-    title: intl.formatMessage(messages.birthday),
-    name: 'birthday',
-    formItem: {
-      type: 'date',
-      rules: [
-        { required: true, message: intl.formatMessage(messages.messageBirthday) }
-      ]
-    }
-  },
+  // {
+  //   title: intl.formatMessage(messages.birthday),
+  //   name: 'birthday',
+  //   formItem: {
+  //     type: 'date',
+  //     rules: [
+  //       { required: true, message: intl.formatMessage(messages.messageBirthday) }
+  //     ]
+  //   }
+  // },
   {
     title: intl.formatMessage(messages.phoneNumber),
     name: 'phone_number',

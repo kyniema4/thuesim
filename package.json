@@ -13,6 +13,7 @@
     "@antv/data-set": "^0.10.2",
     "animate.css": "^3.7.2",
     "antd": "^3.23.4",
+    "axios": "^0.19.2",
     "bizcharts": "^3.5.5",
     "classnames": "^2.2.6",
     "cmn-utils": "^1.0.9",

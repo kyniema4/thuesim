@@ -30,5 +30,20 @@ export default ({
     id: `${scope}.password`,
     defaultMessage: 'Password',
   },
-
+  confirmPassword: {
+    id: `${scope}.confirmPassword`,
+    defaultMessage: 'Confirm password',
+  },
+  currentPassword: {
+    id: `${scope}.currentPassword`,
+    defaultMessage: 'Current password',
+  },
+  newPassword: {
+    id: `${scope}.newPassword`,
+    defaultMessage: 'New password',
+  },
+  changePassword:{
+    id: `${scope}.changePassword`,
+    defaultMessage: 'Change password',
+  }
 });

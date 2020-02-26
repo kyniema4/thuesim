@@ -303,5 +303,9 @@
   "routes.profile.tutorialEdit": "Bạn có thể xem và chỉnh sửa thông tin của bạn ngay tại đây.",
   "routes.profile.yourName": "Tên của bạn",
   "routes.profile.save": "Lưu",
-  "routes.profile.password": "Mật khẩu"
+  "routes.profile.password": "Mật khẩu",
+  "routes.profile.confirmPassword": "Xác nhận mật khẩu",
+  "routes.profile.currentPassword": "Mật khẩu hiện tại",
+  "routes.profile.newPassword": "Mật khẩu mới",
+  "routes.profile.changePassword": "Thay đổi mật khẩu"
 }
